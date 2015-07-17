@@ -7,65 +7,13 @@ function getWindowSize() {
 
 window.addEventListener('load',function(){
 	(function(){
-		var size = getWindowSize();
 		var team = document.getElementsByClassName('team')[0];
+		var size = getWindowSize();
 		team.style.height = size.height + 'px';
+		team.style.width = size.width + 'px';
 		moveBackground(document.body);
 		showName();
 	})();
-
-	(function(){
-		var next = document.getElementById('next');
-		var currentPage = 1;
-		next.addEventListener('click', function(){
-			console.log(currentPage);
-			if(currentPage == 1){
-				var member = document.getElementById('member');
-				member.style.display = 'block';
-		 		toButton(member);
-
-		 		var persons = member.getElementsByClassName('person');
-		 		(function(){
-					var len = persons.length;
-					var i =0 ;
-					(function showPerson(){
-						if(i < len){
-							setTimeout(showPerson,400);
-							persons[i].style.opacity = 1;
-							i++;
-						}
-					})();		 			
-		 		})();
-			}
-
-			if(currentPage == 2){
-				var goal = document.getElementById('goal');
-				goal.style.display = 'block';
-				var footer = document.getElementsByTagName('footer')[0];
-				footer.style.display = 'block';
-				toButton(goal);
-				document.getElementById('next').style.display = 'none';
-			}
-
-	 		currentPage +=1;
-		});
-
-
-		function toButton(node){
-			var offsetTop = node.offsetTop;
-			var contentHight = document.body.offsetHeight;
-			scrollHight = contentHight - offsetTop;
-			var i = 0;
-			(function _toButton(){
-				i += 10;
-				window.scrollBy(0,10);
-				if(i<scrollHight){
-					setTimeout(_toButton,10);
-				}
-			})();
-		}
-	})();
-
 });
 
 
@@ -97,32 +45,48 @@ function moveBackground(node){
 
 
 function showName(){
-	var team = document.getElementsByClassName('team')[0];
-	var teamName = team.getElementsByTagName('h1')[0];
-	var teamNameMean = team.getElementsByTagName('h2')[0];
+	var canvas = document.getElementsByTagName('canvas')[0];
+	var cxt = canvas.getContext('2d');
+
+	var windowSize = getWindowSize();
+
+	cxt.font="lighter 70px sans-serif";
+	cxt.textAlign = "center";
+	cxt.textBaseline = "middle";
+	cxt.fillStyle = '#fff';
 	var i = 0;
+	var x = windowSize.width/2;
+	var y = windowSize.height/2;
+	var id;
+
 	!function draw(){
 		if(i<100){
-			teamName.innerHTML  = ''+(i/100).toFixed(2);
+			cxt.clearRect(x-100,y-100,300,200);
+			cxt.fillText(''+(i/100).toFixed(2), x, y);
 		}else if(i==100){
-			teamName.innerHTML  = ''+(i/100).toFixed(0);
+			cxt.clearRect(x-100,y-100,300,200);
+			cxt.fillText(''+(i/100).toFixed(0), x, y);
 		}else if(i==101){
-			teamName.innerHTML  = 'Z T O';
+			cxt.clearRect(x-100,y-100,300,200);
+			cxt.fillText('Z T O', x, y);
 		}else if(i == 102){
-			teamName.innerHTML = 'Zero To One';
+			cxt.clearRect(x-100,y-100,300,200);
+			cxt.fillText('Zero To One', x, y);
 		}else if(i == 103){
-			teamNameMean.innerHTML = 'We are on the way of ZTO!';
+			cxt.font = 'lighter 32px sans-serif'; 
+			cxt.fillText('We are on the way of ZTO!', x, y+140);
+			clearTimeout(id);
 		}
 
 
 		if(i<5){
-			setTimeout(draw,500);
+			id = setTimeout(draw,500);
 		}else if(i<95){
-			setTimeout(draw,50);
+			id = setTimeout(draw,50);
 		}else if(i<101){
-			setTimeout(draw,500);
-		}else if(i<104){
-			setTimeout(draw,1000);
+			id = setTimeout(draw,500);
+		}else{
+			id = setTimeout(draw,1000);
 		}
 		i++;
 	}();

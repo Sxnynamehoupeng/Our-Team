@@ -18,37 +18,17 @@ body{
 	background-size: 120% 120%;
 	background-clip: border-box;
 	background-attachment: fixed;
-	font-family: "calluna-sans",Helvetica, 'Hiragino Sans GB', 'Microsoft JhengHei', 'WenQuanYi Micro Hei', sans-serif;
-	color: #fff;
 }
 
 .team{
 	width: 100%;
 }
 
-.team h1,h2{
-	text-align: center;
-}
-
-.team h1{
-	font-size: 70px;
-	padding-top: 260px;
-}
-
-.team h2{
-	margin-top: 20px;
-	font-size: 32px;
-}
-
 
 .member{
-	-webkit-transition: 1s;
-	-o-transition: 1s;
-	transition: 1s;
 	width: 100%;
-	display: none;
+/*	background-color: #333;*/
 	overflow: hidden;
-	padding-bottom: 60px;
 }
 
 header{
@@ -65,13 +45,9 @@ header{
 }
 
 .person{
-	-webkit-transition: 1s;
-	-o-transition: 1s;
-	transition: 1s;
 	margin-bottom: 60px;
 	width: 33%;
 	float: left;
-	opacity: 0;
 }
 
 .person .wrap{
@@ -80,6 +56,8 @@ header{
 	height: 100px;
 	padding: 20px 10px;
 	font-size: 15px;
+	font-family: "calluna-sans",Helvetica, 'Hiragino Sans GB', 'Microsoft JhengHei', 'WenQuanYi Micro Hei', sans-serif;
+	color: #fff;
 	overflow: hidden;
 }
 
@@ -123,50 +101,12 @@ header{
 	font-size: 25px;
 }
 
-.goal{
-	width: 100%;
-	display: none;
-	overflow: hidden;
-}
-
-.goal div{
-	float: left;
-	width: 20%;
-	margin-left: 10%;
-	font-size: 18px;
-}
-
-.goal div:first-of-type h1{
-	font-size: 90px;
-	padding-top: 20%;
-}
-
-.goal p {
-	line-height: 2.5em;
-}
-
-
-#next{
-	position: fixed;
-	width: 39px;
-	height: 39px;
-	left: 50%;
-	margin-left: -18px;
-	bottom: 20px;
-	background-image: url('../images/banner.png');
-	background-position: -30px 0;
-	cursor: pointer;
-}
-
 
 footer{
-	display: none;
-	padding-bottom: 20px;
-	margin-top: 100px;
+	margin-bottom: 20px;
 }
 
 footer p {
-	font-size: 16px;
 	color: #fff;
 	text-align: center;
 }
