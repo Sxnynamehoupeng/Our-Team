@@ -86,7 +86,7 @@ header{
 }
 
 .person:hover{
-	background-color: #666;
+	background-color: rgba(174,170,170,0.3);
 }
 
 .person  div{
