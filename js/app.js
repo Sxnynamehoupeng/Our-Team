@@ -10,10 +10,6 @@ window.addEventListener('load',function(){
 		var size = getWindowSize();
 		var team = document.getElementsByClassName('team')[0];
 		team.style.height = size.height + 'px';
-		var member = document.getElementById('member');
-		member.style.height = size.height + 'px';
-		var goal = document.getElementById('goal');
-		goal.style.height = size.height + 'px';
 	})();
 
 	moveBackground(document.body);
@@ -59,7 +55,7 @@ window.addEventListener('load',function(){
 		function toButton(node){
 			var offsetTop = node.offsetTop;
 			var contentHight = document.body.offsetHeight;
-			scrollHight = contentHight - offsetTop + 500;
+			scrollHight =  1000;
 			var i = 0;
 			(function _toButton(){
 				i += 10;
