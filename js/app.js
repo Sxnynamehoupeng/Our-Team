@@ -55,7 +55,7 @@ window.addEventListener('load',function(){
 		function toButton(node){
 			var offsetTop = node.offsetTop;
 			var contentHight = document.body.offsetHeight;
-			scrollHight =  1000;
+			scrollHight =  3000;
 			var i = 0;
 			(function _toButton(){
 				i += 10;
