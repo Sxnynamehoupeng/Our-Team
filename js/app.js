@@ -67,15 +67,6 @@ window.addEventListener('load',function(){
 		}
 	})();
 
-
-
-	// var bg = document.getElementById('bg');
-	// bg.addEventListener('click',function(){
-	// 	var dialog = document.getElementById('dialog');
-	// 	dialog.classList.add('over-box-quit');
-	// 	bg.classList.add('box-quit');
-	// });
-
 });
 
 
@@ -122,6 +113,8 @@ function showName(){
 			teamName.innerHTML = 'Zero To One';
 		}else if(i == 103){
 			teamNameMean.innerHTML = 'We are on the way of ZTO!';
+			document.getElementById('next').style.display = 'block';
+
 		}
 
 
